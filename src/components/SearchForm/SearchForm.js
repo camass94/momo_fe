@@ -1,41 +1,31 @@
-import React from 'react'
+import React, { useState,  } from 'react'
+import { Button, TextField, Input, InputBase } from '@material-ui/core'
 
-import './SearchForm.scss'
+import { LinkLists } from 'components/LinkLists/LinkLists.js'
 
 import btnSearch from 'images/icons/btn_search.svg'
 
+import './SearchForm.scss'
 
 export const SearchForm = props =>{
+    const {items} = props;
+    const _classes = {
+        parent : (props.className)?props.className+"__search-form":"",
+    }
 
     return (
-        <div className="search-form">
-            <input className="search-form__inp" type="text" />
-            <button className="search-form__btn">
-                <img className="main__btn" src={btnSearch} alt="search button" />
+        <div className={_classes.parent+" search-form"}>
+            <input 
+                placeholder="Search..." 
+                className={_classes.parent+"__input search-form__input"}
+                /* classes={{
+                    root: _classes.parent+"__root search-form__root",
+                    input: _classes.parent+"__input search-form__input"
+                }} */
+            />
+            <button type="button" className={_classes.parent+"__btn search-form__btn btn"+_classes.parent+"__btn--search btn"}>
+                <img className="icon" src={btnSearch} alt="search icon" />
             </button>
-            <RecommentWords />
-        </div>
-    )
-}
-
-export const RecommentWords = props => {
-
-    return (
-        <div className="recomment-words">
-            <div className="recomment-words__title">추천 검색어</div>
-            <div className="recomment-words__lists">
-                <ul className="recomment-words__ul">
-                    <li className="recomment-words__list">
-                        치맥파티
-                    </li>
-                    <li className="recomment-words__list">
-                        영화감상
-                    </li>
-                    <li className="recomment-words__list">
-                        코인노래방
-                    </li>
-                </ul>
-            </div>
         </div>
     )
 }

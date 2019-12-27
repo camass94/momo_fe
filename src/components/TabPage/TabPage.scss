@@ -1,0 +1,33 @@
+@import 'variables';
+@import 'mixin';
+
+.tabs {
+    font-weight: 400;
+    .MuiTabs-indicator {
+        display: none;
+    }
+
+    $tabPadding: $outerPadding/2;
+    .MuiTabs-root {
+        padding: 0 $tabPadding;
+    }
+    .tab {
+        padding: 0 $tabPadding;
+        font-size: 19px;
+        color: #ccc;
+        &.Mui-selected {
+            font-size: 24px;
+            color: #000;
+        }
+    }
+
+    .MuiBox-root {
+        padding: 0;
+    }
+    .tabpanel {
+        &__container {
+            padding: $outerPadding 0;
+        }
+    }
+
+}

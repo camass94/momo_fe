@@ -54,8 +54,8 @@ export const SideMenu = () =>{
                     </div>
                 </section>
 
-                {listItems && <LinkLists items={listItems} />}
-
+                {listItems && <LinkLists className="links" items={listItems}/>}
+                            
                 <Button onClick={logout}>Login Out</Button>
 
                     

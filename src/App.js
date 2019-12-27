@@ -8,7 +8,7 @@ import 'styles/app.scss'
 
 const App = ()=>{
   const account = useSelector(store => store.account, [])
-
+  account.email = true;
   return (
     <BrowserRouter>
       <div className="App">
